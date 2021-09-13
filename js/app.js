@@ -13,30 +13,25 @@ const showProducts = (products) => {
     const div = document.createElement("div");
     div.classList.add("product");
     div.innerHTML = `
-
       <div class="col">
-      <div class=" single-product card p-1 m-2 bg-light rounder-3">
-          <img src=${image} class="card-img-top product-image w-75 p-2 mx-auto" alt="...">
+        <div class="card single-product p-2 bg-light">
+          <img src=${image} class="card-img-top product-image w-75 p-1 mx-auto" alt="...">
           <div class="card-body">
               <h5 class="card-title text-center">${product.title}</h5>
-              <p class="card-text text-center"> Category: ${product.category}</p>
+              <p class="card-text text-center"> <span class="fw-bold">Category:</span>  ${product.category}</p>
               <h5 class="card-text text-center">Price: $ ${product.price}</h5>
               <div class="text-center"
-              <span class="card-text p-2">${product.rating.rate} <i class="fas fa-star-half-alt"></i></span>
-              <span class="card-text p-2">${product.rating.count} <i class="fas fa-user"></i></span>
+              <span class="card-text p-2 m-2">${product.rating.rate} <i class="fas fa-star-half-alt"></i></span>
+              <span class="card-text p-2 m-2">${product.rating.count} <i class="fas fa-user"></i></span>
               </div>
           </div>
-          <div class="">
+          
           <div class="d-grid gap-2">
-          <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-success btn-outline-secondary text-white">Add to cart</button>
-        <button id="details-btn" class="btn btn-outline-secondary">Details</button>
-        </div>
+              <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-success btn-outline-secondary text-white"><i class="fas fa-shopping-cart"></i> Add to cart</button>
+              <button id="details-btn" class="btn btn-outline-secondary"><i class="fas fa-info-circle"></i> Details</button>
           </div>
-      </div>
-  </div>
-
-      
-      `;
+        </div>
+      </div>`;
     document.getElementById("all-products").appendChild(div);
   }
 };
@@ -49,7 +44,7 @@ const addToCart = (id, price) => {
   updateTotal();
   document.getElementById("total-Products").innerText = count;
 };
-
+// get value from element 
 const getInputValue = (id) => {
   const element = document.getElementById(id).innerText;
   const converted = parseFloat(element);
