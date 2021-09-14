@@ -15,7 +15,7 @@ const showProducts = (products) => {
     div.innerHTML = `
       <div class="col">
         <div class="card single-product p-2 bg-light">
-          <img src=${image} class="card-img-top product-image w-75 p-1 mx-auto" alt="...">
+          <img src=${image} class=" product-image p-1 mx-auto" alt="...">
           <div class="card-body">
               <h5 class="card-title text-center">${product.title}</h5>
               <p class="card-text text-center"> <span class="fw-bold">Category:</span>  ${product.category}</p>
@@ -26,9 +26,9 @@ const showProducts = (products) => {
               </div>
           </div>
           
-          <div class="d-grid gap-2">
-              <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-success btn-outline-secondary text-white"><i class="fas fa-shopping-cart"></i> Add to cart</button>
-              <button id="details-btn" class="btn btn-outline-secondary"><i class="fas fa-info-circle"></i> Details</button>
+          <div class="mx-auto">
+              <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-success btn-outline-secondary text-white px-3 m-1"><i class="fas fa-shopping-cart"></i> Add cart</button>
+              <button id="details-btn" class="btn btn-outline-secondary px-3 m-1"><i class="fas fa-info-circle"></i> Details</button>
           </div>
         </div>
       </div>`;
